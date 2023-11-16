@@ -6,7 +6,6 @@ export default function Home() {
         <main>
             canvas
             <h1>Generate PDF with React-pdf</h1>
-            <button onClick={() => {}}>Generate PDF</button>
         </main>
     )
 }
