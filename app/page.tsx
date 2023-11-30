@@ -9,8 +9,8 @@ export default function Home() {
                 {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
             </PDFDownloadLink>
             <PDFViewer
-                width={700}
-                height={700}
+                width={500}
+                height={500}
             >
                 <PdfDocument/>
             </PDFViewer>
