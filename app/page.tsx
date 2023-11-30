@@ -10,7 +10,7 @@ export default function Home() {
             </PDFDownloadLink>
             <PDFViewer
                 width={500}
-                height={500}
+                height={750}
             >
                 <PdfDocument/>
             </PDFViewer>
