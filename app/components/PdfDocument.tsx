@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignContent: 'center',
-        gap: 12
+        gap: 12,
+        marginBottom: 20
     },
     fullName: {
         fontSize: 22,
@@ -31,6 +32,19 @@ const styles = StyleSheet.create({
         height: 40,
         border: 1,
         borderRadius: '50%'
+    },
+    profile: {
+        marginBottom: 20,
+    },
+    subTitle: {
+        fontSize: 18,
+        marginBottom: 10,
+    },
+    profileDescription: {
+        fontSize: 14
+    },
+    employment: {
+        marginBottom: 20
     }
 
 });
@@ -56,6 +70,21 @@ const PdfDocument = () => {
                                 front-end developer
                             </Text>
                         </View>
+                    </View>
+                    <View style={styles.profile}>
+                        <Text style={styles.subTitle}>
+                            Profile
+                        </Text>
+                        <Text style={styles.profileDescription}>
+                            .NET developer with 3+ years expertise in full lifecycle of desktop/web apps,
+                            from ideation to launch. Skilled in leading teams, tech solutions, and effective
+                            communication. Analytical thinker for high-level problem-solving.
+                        </Text>
+                    </View>
+                    <View style={styles.employment}>
+                        <Text style={styles.subTitle}>
+                            Employment History
+                        </Text>
                     </View>
                 </View>
 
