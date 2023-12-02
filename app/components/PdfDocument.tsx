@@ -124,7 +124,9 @@ const PdfDocument = () => {
                         </View>
                     </View>
                     <View style={styles.education}>
-
+                        <Text style={styles.subTitle}>
+                            Education
+                        </Text>
                     </View>
                 </View>
                 <View style={styles.additional}>
