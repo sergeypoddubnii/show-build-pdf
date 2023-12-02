@@ -45,6 +45,24 @@ const styles = StyleSheet.create({
     },
     employment: {
         marginBottom: 20
+    },
+    employmentItem: {
+
+    },
+    employmentName: {
+        fontSize: 12,
+        marginBottom: 5
+    },
+    employmentDate: {
+        fontSize: 12,
+        textTransform: 'uppercase',
+        marginBottom: 5
+    },
+    employmentDescription: {
+        fontSize: 12,
+    },
+    education: {
+
     }
 
 });
@@ -85,10 +103,30 @@ const PdfDocument = () => {
                         <Text style={styles.subTitle}>
                             Employment History
                         </Text>
+                        <View style={styles.employmentItem}>
+                            <Text style={styles.employmentName}>
+                                Middle to Senior C#.Net Software Engineer, Optimate
+                            </Text>
+                            <Text style={styles.employmentDate}>
+                                O C T O B E R 2 0 2 2 — P R E S E N T
+                            </Text>
+                            <Text style={styles.employmentDescription}>
+                                Orchestrated the conception and architecture of a sophisticated multitenant
+                                application from scratch, tailored as a platform with CRM, HRM, and LMS elements
+                                for language and other educational schools. Employing advanced technologies, I
+                                led the entire development process, from groundwork to deployment, integrating
+                                diverse features. I established and managed the infrastructure, directing technical
+                                and architectural decisions within a four-developer team, including myself. In
+                                addition to these responsibilities, my role encompassed handling DevOps tasks to
+                                ensure the application's robustness, while meticulously maintaining comprehensive
+                                documentation throughout the project's lifecycle.
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={styles.education}>
+
                     </View>
                 </View>
-
-
                 <View style={styles.additional}>
 
                 </View>
