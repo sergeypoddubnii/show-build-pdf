@@ -6,7 +6,10 @@ export default function Home() {
     return (
         <main>
             <PDFDownloadLink document={<PdfDocument/>} fileName="somename.pdf">
-                {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
+                {({ blob, url, loading, error }) => {
+                    console.log('url', blob)
+                    return (loading ? 'Loading document...' : 'Download now!')
+                }}
             </PDFDownloadLink>
             <PDFViewer
                 width={500}
