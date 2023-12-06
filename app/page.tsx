@@ -5,9 +5,13 @@ import PdfDocument from "@/app/components/PdfDocument";
 export default function Home() {
     return (
         <main>
-            <PDFDownloadLink document={<PdfDocument/>} fileName="somename.pdf">
+            <PDFDownloadLink
+                document={<PdfDocument />}
+                fileName="somename.pdf"
+            >
                 {({ blob, url, loading, error }) => {
-                    console.log('url', blob)
+                    console.log('blob',blob);
+                    console.log('url', url);
                     return (loading ? 'Loading document...' : 'Download now!')
                 }}
             </PDFDownloadLink>
@@ -15,7 +19,7 @@ export default function Home() {
                 width={500}
                 height={750}
             >
-                <PdfDocument/>
+                <PdfDocument />
             </PDFViewer>
         </main>
     )
