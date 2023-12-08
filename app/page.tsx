@@ -10,8 +10,6 @@ export default function Home() {
                 fileName="somename.pdf"
             >
                 {({ blob, url, loading, error }) => {
-                    console.log('blob',blob);
-                    console.log('url', url);
                     return (loading ? 'Loading document...' : 'Download now!')
                 }}
             </PDFDownloadLink>
