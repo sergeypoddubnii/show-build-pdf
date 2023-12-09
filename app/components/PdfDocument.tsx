@@ -63,7 +63,14 @@ const styles = StyleSheet.create({
     },
     education: {
 
+    },
+    educationDescription: {
+        fontSize: 12,
+    },
+    educationDate: {
+        fontSize: 12,
     }
+
 
 });
 
@@ -127,6 +134,17 @@ const PdfDocument = () => {
                         <Text style={styles.subTitle}>
                             Education
                         </Text>
+                        <View >
+                            <Text>
+                                Bachelor, Kharkiv National University of Radioelectronics
+                            </Text>
+                            <Text style={styles.educationDate}>
+                                O C T O B E R 2 0 2 2 — P R E S E N T
+                            </Text>
+                            <Text style={styles.educationDescription}>
+                                Speciality - Computer Science
+                            </Text>
+                        </View>
                     </View>
                 </View>
                 <View style={styles.additional}>
