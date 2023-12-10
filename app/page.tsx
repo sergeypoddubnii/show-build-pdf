@@ -1,8 +1,13 @@
 'use client';
 import {PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import PdfDocument from "@/app/components/PdfDocument";
+import MyPdfViewer from "@/app/components/Canvas";
+import PDFViewereee from "@/app/pdfpagejs";
+import {useState} from "react";
 
 export default function Home() {
+    const [urlFile, setUrlFile] = useState('');
+
     return (
         <main>
             <PDFDownloadLink
@@ -10,6 +15,10 @@ export default function Home() {
                 fileName="somename.pdf"
             >
                 {({ blob, url, loading, error }) => {
+                    console.log('url',`${url}`);
+                    if(!url) return;
+                    setUrlFile(url);
+                    console.log('blob',blob);
                     return (loading ? 'Loading document...' : 'Download now!')
                 }}
             </PDFDownloadLink>
@@ -20,6 +29,8 @@ export default function Home() {
             >
                 <PdfDocument />
             </PDFViewer>
+            <MyPdfViewer url={urlFile}/>
+            <PDFViewereee/>
         </main>
     )
 }

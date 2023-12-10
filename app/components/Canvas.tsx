@@ -1,28 +1,45 @@
-import React from 'react';
-import ReactPDF, {Document, Page, View, Text, PDFViewer} from '@react-pdf/renderer';
-import BlobProvider = ReactPDF.BlobProvider;
+'use client';
+import React, { useState, useRef } from 'react';
+// @ts-ignore
+import { usePdf } from '@mikecousins/react-pdf';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf'
+pdfjsLib.GlobalWorkerOptions.workerSrc = require('pdfjs-dist/build/pdf.worker.entry.js')
 
-interface PdfCanvasViewerProps {
-    // You can pass additional props or configurations here
-}
+const MyPdfViewer = ({url}:any) => {
+    const [page, setPage] = useState(1);
+    const canvasRef = useRef(null);
 
-const PdfCanvasViewer: React.FC<PdfCanvasViewerProps> = () => {
+    const { pdfDocument, pdfPage } = usePdf({
+        file: url,
+        page,
+        canvasRef,
+    });
+
     return (
-        <BlobProvider document={<Document><Page><View><Text>Hello, World!</Text></View></Page></Document>}>
-            {({ blob, url, loading, error }) => (
-                <div>
-                    {loading && <p>Loading...</p>}
-                    {error && <p>Error loading PDF</p>}
-
-                    {blob &&  url && (
-                        <PDFViewer width="100%" height="500px">
-                            <iframe src={url} style={{ width: '100%', height: '100%' }} />
-                        </PDFViewer>
-                    )}
-                </div>
+        <div>
+            {!pdfDocument && <span>Loading...</span>}
+            <canvas ref={canvasRef} />
+            {Boolean(pdfDocument && pdfDocument.numPages) && (
+                <nav>
+                    <ul className="pager">
+                        <li className="previous">
+                            <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+                                Previous
+                            </button>
+                        </li>
+                        <li className="next">
+                            <button
+                                disabled={page === pdfDocument.numPages}
+                                onClick={() => setPage(page + 1)}
+                            >
+                                Next
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             )}
-        </BlobProvider>
+        </div>
     );
 };
 
-export default PdfCanvasViewer;
+export default MyPdfViewer;
