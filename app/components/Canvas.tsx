@@ -1,46 +1,28 @@
-import { useEffect, useRef } from 'react';
-import pdfjs from 'pdfjs-dist/build/pdf.mjs';
+import React from 'react';
+import ReactPDF, {Document, Page, View, Text, PDFViewer} from '@react-pdf/renderer';
+import BlobProvider = ReactPDF.BlobProvider;
 
 interface PdfCanvasViewerProps {
-    pdfUrl: string;
+    // You can pass additional props or configurations here
 }
 
-const PdfCanvasViewer: React.FC<PdfCanvasViewerProps> = ({ pdfUrl }) => {
-    const canvasRef = useRef<HTMLCanvasElement | null>(null);
-    console.log('pdfjs', pdfjs)
-    // useEffect(() => {
-    //     const renderPdfOnCanvas = async () => {
-    //         if (!canvasRef.current) return;
-    //
-    //         // Get the canvas element
-    //         const canvas = canvasRef.current;
-    //         const context = canvas.getContext('2d');
-    //
-    //         // Load the PDF document
-    //         const loadingTask = pdfjs.getDocument(pdfUrl);
-    //         const pdfDocument = await loadingTask.promise;
-    //
-    //         // Get the first page of the PDF
-    //         const pageNumber = 1;
-    //         const page = await pdfDocument.getPage(pageNumber);
-    //
-    //         // Set the canvas size to match the PDF page size
-    //         const viewport = page.getViewport({ scale: 1.5 });
-    //         canvas.width = viewport.width;
-    //         canvas.height = viewport.height;
-    //
-    //         // Render the PDF page on the canvas
-    //         const renderContext = {
-    //             canvasContext: context!,
-    //             viewport: viewport,
-    //         };
-    //         await page.render(renderContext);
-    //     };
-    //
-    //     renderPdfOnCanvas();
-    // }, [pdfUrl]);
+const PdfCanvasViewer: React.FC<PdfCanvasViewerProps> = () => {
+    return (
+        <BlobProvider document={<Document><Page><View><Text>Hello, World!</Text></View></Page></Document>}>
+            {({ blob, url, loading, error }) => (
+                <div>
+                    {loading && <p>Loading...</p>}
+                    {error && <p>Error loading PDF</p>}
 
-    return <canvas ref={canvasRef} />;
+                    {blob &&  url && (
+                        <PDFViewer width="100%" height="500px">
+                            <iframe src={url} style={{ width: '100%', height: '100%' }} />
+                        </PDFViewer>
+                    )}
+                </div>
+            )}
+        </BlobProvider>
+    );
 };
 
 export default PdfCanvasViewer;
