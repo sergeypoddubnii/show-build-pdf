@@ -15,10 +15,8 @@ export default function Home() {
                 fileName="somename.pdf"
             >
                 {({ blob, url, loading, error }) => {
-                    console.log('url',`${url}`);
                     if(!url) return;
                     setUrlFile(url);
-                    console.log('blob',blob);
                     return (loading ? 'Loading document...' : 'Download now!')
                 }}
             </PDFDownloadLink>
