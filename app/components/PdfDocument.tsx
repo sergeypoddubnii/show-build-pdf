@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View} from "@react-pdf/renderer";
+import Html from 'react-pdf-html';
 
 const styles = StyleSheet.create({
     page: {
@@ -101,6 +102,14 @@ const PdfDocument = () => {
                             Profile
                         </Text>
                         <Text style={styles.profileDescription}>
+                            <Html>
+                                {`<ul>
+                                    <li>Fast and lightweight</li>
+                                    <li>Semantic markup</li>
+                                    <li>Standardized HTML between browsers</li>
+                                    <li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
+                                </ul>`}
+                            </Html>
                             .NET developer with 3+ years expertise in full lifecycle of desktop/web apps,
                             from ideation to launch. Skilled in leading teams, tech solutions, and effective
                             communication. Analytical thinker for high-level problem-solving.
