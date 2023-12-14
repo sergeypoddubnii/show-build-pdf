@@ -1,5 +1,5 @@
 'use client';
-import {PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
+import {PDFDownloadLink} from '@react-pdf/renderer';
 import PdfDocument from "@/app/components/PdfDocument";
 import MyPdfViewer from "@/app/components/Canvas";
 import {useState} from "react";
@@ -19,13 +19,6 @@ export default function Home() {
                     return (loading ? 'Loading document...' : 'Download now!')
                 }}
             </PDFDownloadLink>
-            {/*<PDFViewer*/}
-            {/*    width={500}*/}
-            {/*    height={750}*/}
-            {/*    showToolbar={false}*/}
-            {/*>*/}
-            {/*    <PdfDocument />*/}
-            {/*</PDFViewer>*/}
             {urlFile ? <MyPdfViewer url={urlFile}/> : null}
         </main>
     )
