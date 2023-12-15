@@ -15,6 +15,7 @@ export default function Home() {
             >
                 {({ blob, url, loading, error }) => {
                     if(!url) return;
+
                     setUrlFile(url);
                     return (loading ? 'Loading document...' : 'Download now!')
                 }}
