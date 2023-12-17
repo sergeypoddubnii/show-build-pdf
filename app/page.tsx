@@ -11,9 +11,9 @@ export default function Home() {
         <main>
             <PDFDownloadLink
                 document={<PdfDocument />}
-                fileName="somename.pdf"
+                fileName="cv.pdf"
             >
-                {({ blob, url, loading, error }) => {
+                {({ url, loading, error }) => {
                     if(!url) return;
 
                     setUrlFile(url);
