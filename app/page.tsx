@@ -11,7 +11,7 @@ export default function Home() {
         <main>
             <PDFDownloadLink
                 document={<PdfDocument />}
-                fileName="cv.pdf"
+                fileName="resume.pdf"
             >
                 {({ url, loading, error }) => {
                     if(!url) return;
