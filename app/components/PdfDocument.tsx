@@ -2,14 +2,15 @@
 import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
 import Html from 'react-pdf-html';
+import someFont from '../../public/fonts/RubikDoodleShadow-Regular.ttf';
 
-Font.register({ family: 'Roboto', src: '../../public/fonts/RubikDoodleShadow-Regular.ttf'});
+Font.register({ family: 'Roboto', src: someFont});
 
 const styles = StyleSheet.create({
     page: {
         flexDirection: 'row',
         backgroundColor: 'white',
-        // fontFamily: 'Roboto',
+        fontFamily: 'Roboto',
     },
     general: {
         padding: 10,

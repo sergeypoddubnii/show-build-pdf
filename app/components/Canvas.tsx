@@ -2,8 +2,6 @@
 import React, { useState, useRef } from 'react';
 // @ts-ignore
 import { usePdf } from '@mikecousins/react-pdf';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf'
-pdfjsLib.GlobalWorkerOptions.workerSrc = require('pdfjs-dist/build/pdf.worker.entry.js')
 
 const MyPdfViewer = ({url}:any) => {
     const [page, setPage] = useState(1);
