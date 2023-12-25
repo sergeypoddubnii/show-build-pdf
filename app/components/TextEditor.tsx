@@ -4,7 +4,7 @@ import React from 'react';
 const TextEditor = () => {
     return (
         <div>
-           adas
+            TextEditor
         </div>
     );
 };
