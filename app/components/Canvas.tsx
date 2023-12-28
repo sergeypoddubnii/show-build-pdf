@@ -3,7 +3,8 @@ import React, { useState, useRef } from 'react';
 // @ts-ignore
 import { usePdf } from '@mikecousins/react-pdf';
 
-const MyPdfViewer = ({url}:any) => {
+
+const CanvasPdfViewer = ({url}:any) => {
     const [page, setPage] = useState(1);
     const canvasRef = useRef(null);
 
@@ -12,10 +13,14 @@ const MyPdfViewer = ({url}:any) => {
         page,
         canvasRef,
     });
+
     return (
         <div>
             {!pdfDocument && <span>Loading...</span>}
-            <canvas ref={canvasRef} />
+            <canvas
+                ref={canvasRef}
+                style={{transform: 'scale(0.8)'}}
+            />
             {Boolean(pdfDocument && pdfDocument.numPages) && (
                 <nav>
                     <ul className="pager">
@@ -39,4 +44,4 @@ const MyPdfViewer = ({url}:any) => {
     );
 };
 
-export default MyPdfViewer;
+export default CanvasPdfViewer;

@@ -2,9 +2,9 @@
 import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
 import Html from 'react-pdf-html';
-import someFont from '../../public/fonts/RubikDoodleShadow-Regular.ttf';
+import Roboto from '../../public/fonts/Roboto-Regular.ttf';
 
-Font.register({ family: 'Roboto', src: someFont});
+Font.register({ family: 'Roboto', src: Roboto});
 
 const styles = StyleSheet.create({
     page: {

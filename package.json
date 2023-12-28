@@ -18,14 +18,17 @@
     "pdfjs-dist": "^2.16.105",
     "react": "^18",
     "react-dom": "^18",
+    "react-draft-wysiwyg": "^1.15.0",
     "react-pdf": "^7.5.1",
     "react-pdf-html": "^1.1.18",
     "react-quill": "^0.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/quill": "^2.0.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-draft-wysiwyg": "^1.13.7",
     "autoprefixer": "^10",
     "daisyui": "^4.4.23",
     "eslint": "^8",
