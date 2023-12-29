@@ -1,24 +1,18 @@
 'use client';
 import React, {useState} from 'react';
-import { Editor, EditorState } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
 
 const TextEditor = () => {
-    const [editorState, setEditorState] = useState('');
+    const [editorState, setEditorState] = useState();
 
-    const handleChangeEditorState = (e: any) => {
-        console.log('e', JSON.stringify(e, null, 4));
-        EditorState.createEmpty()
+    const handleChangeEditorState = (value: any) => {
+        setEditorState(value)
     }
 
     return (
         <div>
-            <Editor
-                toolbarClassName="toolbarClassName"
-                wrapperClassName="wrapperClassName"
-                editorClassName="editorClassName"
-                onEditorStateChange={handleChangeEditorState}
-            />;
+            <ReactQuill onChange={handleChangeEditorState} theme="snow" />
         </div>
     );
 };
