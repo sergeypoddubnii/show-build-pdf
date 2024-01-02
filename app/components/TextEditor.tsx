@@ -1,19 +1,20 @@
 'use client';
-import React, {useState} from 'react';
+import React from 'react';
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 
-const TextEditor = () => {
-    const [editorState, setEditorState] = useState();
+interface IProps {
+    value: string;
+    handleChange: (value: string) => void;
+}
 
-    const handleChangeEditorState = (value: any) => {
-        setEditorState(value)
-    }
-
+const TextEditor = ({value, handleChange}:IProps) => {
     return (
-        <div>
-            <ReactQuill onChange={handleChangeEditorState} theme="snow" />
-        </div>
+        <ReactQuill
+            onChange={handleChange}
+            theme="snow"
+            value={value}
+        />
     );
 };
 

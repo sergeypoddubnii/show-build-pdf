@@ -7,12 +7,13 @@ import TextEditor from "@/app/components/TextEditor";
 
 export default function Home() {
     const [urlFile, setUrlFile] = useState('');
+    const [valueEditor, setValueEditor] = useState('');
 
     return (
         <main>
             <PDFDownloadLink
                 document={<PdfDocument />}
-                fileName="resume.pdf"
+                fileName="res.pdf"
             >
                 {({ url, loading, error }) => {
                     if(!url) return;
@@ -21,8 +22,11 @@ export default function Home() {
                     return (loading ? 'Loading document...' : 'Download now!')
                 }}
             </PDFDownloadLink>
-            <TextEditor/>
-            {urlFile ? <MyPdfViewer url={urlFile}/> : null}
+            <TextEditor
+                value={valueEditor}
+                handleChange={setValueEditor}
+            />
+            {urlFile ? <MyPdfViewer url={urlFile} /> : null}
         </main>
     )
 }
