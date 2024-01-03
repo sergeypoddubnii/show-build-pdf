@@ -13,7 +13,7 @@ export default function Home() {
         <main>
             <PDFDownloadLink
                 document={<PdfDocument />}
-                fileName="res.pdf"
+                fileName="firstName_lastName.pdf"
             >
                 {({ url, loading, error }) => {
                     if(!url) return;
