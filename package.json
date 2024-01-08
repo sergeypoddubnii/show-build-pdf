@@ -31,7 +31,7 @@
     "@types/react-dom": "^18",
     "@types/react-draft-wysiwyg": "^1.13.7",
     "autoprefixer": "^10",
-    "daisyui": "^4.4.23",
+    "daisyui": "^4.5.0",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
     "file-loader": "^6.2.0",
