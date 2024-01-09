@@ -4,6 +4,7 @@ import PdfDocument from "@/app/components/PdfDocument";
 import MyPdfViewer from "@/app/components/Canvas";
 import {useState} from "react";
 import TextEditor from "@/app/components/TextEditor";
+import ResumeForm from "@/app/components/ResumeForm";
 
 export default function Home() {
     const [urlFile, setUrlFile] = useState('');
@@ -11,6 +12,7 @@ export default function Home() {
 
     return (
         <main>
+            <ResumeForm/>
             <PDFDownloadLink
                 document={<PdfDocument />}
                 fileName="firstName_lastName.pdf"
