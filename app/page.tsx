@@ -12,7 +12,7 @@ export default function Home() {
 
     return (
         <main>
-            {/*<ResumeForm/>*/}
+            <ResumeForm/>
             <PDFDownloadLink
                 document={<PdfDocument />}
                 fileName="firstName_lastName.pdf"
