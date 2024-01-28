@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'show-build-pdf',
-  description: 'Pdf builder',
+  description: 'Pdf',
 }
 
 export default function RootLayout({
