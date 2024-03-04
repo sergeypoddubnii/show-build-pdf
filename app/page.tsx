@@ -21,7 +21,7 @@ export default function Home() {
                     if(!url) return;
 
                     setUrlFile(url);
-                    return (loading ? 'Loading document...' : 'Download now!')
+                    return (loading ? 'Loading...' : 'Download now!')
                 }}
             </PDFDownloadLink>
             <TextEditor
