@@ -24,10 +24,10 @@ export default function Home() {
                     return (loading ? 'Loading' : 'Download now')
                 }}
             </PDFDownloadLink>
-            <TextEditor
-                value={valueEditor}
-                handleChange={setValueEditor}
-            />
+            {/*<TextEditor*/}
+            {/*    value={valueEditor}*/}
+            {/*    handleChange={setValueEditor}*/}
+            {/*/>*/}
             {urlFile ? <MyPdfViewer url={urlFile} /> : null}
         </main>
     )
