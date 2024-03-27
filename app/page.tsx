@@ -15,7 +15,7 @@ export default function Home() {
             <ResumeForm/>
             <PDFDownloadLink
                 document={<PdfDocument />}
-                fileName="firstName_lastName.pdf"
+                fileName="hashfilename.pdf"
             >
                 {({ url, loading, error }) => {
                     if(!url) return;
