@@ -16,7 +16,7 @@ const CanvasPdfViewer = ({url}:any) => {
 
     return (
         <div>
-            {/*{!pdfDocument && <span>Loading...</span>}*/}
+            {!pdfDocument && <span>Loading...</span>}
             <canvas
                 ref={canvasRef}
                 style={{transform: 'scale(0.8)'}}
