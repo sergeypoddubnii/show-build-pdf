@@ -19,7 +19,7 @@ const CanvasPdfViewer = ({url}:any) => {
             {!pdfDocument && <span>Loading...</span>}
             <canvas
                 ref={canvasRef}
-                style={{transform: 'scale(0.8)'}}
+                style={{transform: 'scale(0.7)'}}
             />
             {Boolean(pdfDocument && pdfDocument.numPages) && (
                 <nav>
