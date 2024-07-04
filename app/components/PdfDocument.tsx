@@ -79,6 +79,17 @@ const styles = StyleSheet.create({
 
 });
 
+const stylesheet = {
+    // clear margins for all <p> tags
+    p: {
+        margin: 0,
+    },
+    // add pink background color to elements with class="special"
+    ['.special']: {
+        color: 'pink',
+    },
+};
+
 const PdfDocument = () => {
     return (
         <Document>
@@ -106,12 +117,15 @@ const PdfDocument = () => {
                             Profile
                         </Text>
                         <Text style={styles.profileDescription}>
-                            <Html>
+                            <Html stylesheet={stylesheet}>
                                 {`<ul>
                                     <li>Fast and lightweight</li>
+                                    <br/>
                                     <li>Semantic markup</li>
+                                    <br/>
                                     <li>Standardized HTML between browsers</li>
-                                    <li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
+                                    <br/>
+                                    <li class="special">Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
                                 </ul>`}
                             </Html>
                             .NET developer with 3+ years expertise in full lifecycle of desktop/web apps,
