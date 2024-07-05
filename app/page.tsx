@@ -10,8 +10,6 @@ export default function Home() {
     const [urlFile, setUrlFile] = useState('');
     const [valueEditor, setValueEditor] = useState('');
 
-    console.log('valueEditor', valueEditor);
-
     return (
         <main>
             <ResumeForm/>
