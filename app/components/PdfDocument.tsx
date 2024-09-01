@@ -3,6 +3,7 @@ import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
 import Html from 'react-pdf-html';
 import Roboto from '../../public/fonts/Roboto-Regular.ttf';
+import ReactDOMServer from 'react-dom/server';
 
 Font.register({ family: 'Roboto', src: Roboto});
 
@@ -46,7 +47,10 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     profileDescription: {
-        fontSize: 14
+        fontSize: 14,
+        backgroundColor: 'red',
+        display: "flex",
+        justifyContent: "flex-start"
     },
     employment: {
         marginBottom: 20
@@ -82,13 +86,43 @@ const styles = StyleSheet.create({
 const stylesheet = {
     // clear margins for all <p> tags
     p: {
-        margin: 0,
+        margin: 20,
     },
-    // add pink background color to elements with class="special"
+    ul: {
+        color: 'white',
+        background: 'darkgreen'
+    },
+    // add pink color to elements with class="special"
     ['.special']: {
         color: 'pink',
-    },
+        display: 'flex'
+    }
+
 };
+
+
+const element = (
+    <html>
+    <body>
+    <style>
+        {`
+        .heading4 {
+          background: darkgreen;
+          color: white;
+        }
+        pre {
+          background-color: #eee;
+          padding: 10px;
+        }`}
+    </style>
+    <h1>Heading 1</h1>
+    <h2 style={{ backgroundColor: 'pink', width: 300 }}>Heading 2</h2>
+    </body>
+    </html>
+);
+
+// @ts-ignore
+const htmlREact = ReactDOMServer.renderToStaticMarkup(element);
 
 const PdfDocument = () => {
     return (
@@ -117,20 +151,22 @@ const PdfDocument = () => {
                             Profile
                         </Text>
                         <Text style={styles.profileDescription}>
-                            <Html stylesheet={stylesheet}>
+                            <Html
+                                stylesheet={stylesheet}
+                                style={{
+                                    fontSize: 14
+                                }}
+                            >
                                 {`<ul>
                                     <li>Fast and lightweight</li>
-                                    <br/>
                                     <li>Semantic markup</li>
-                                    <br/>
                                     <li>Standardized HTML between browsers</li>
-                                    <br/>
-                                    <li class="special">Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
+                                    <li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
                                 </ul>`}
                             </Html>
-                            .NET developer with 3+ years expertise in full lifecycle of desktop/web apps,
-                            from ideation to launch. Skilled in leading teams, tech solutions, and effective
-                            communication. Analytical thinker for high-level problem-solving.
+                            <Html>
+                                {htmlREact}
+                            </Html>
                         </Text>
                     </View>
                     <View style={styles.employment}>
