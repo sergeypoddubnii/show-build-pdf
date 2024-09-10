@@ -3,7 +3,6 @@ import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
 import Html from 'react-pdf-html';
 import Roboto from '../../public/fonts/Roboto-Regular.ttf';
-import ReactDOMServer from 'react-dom/server';
 
 Font.register({ family: 'Roboto', src: Roboto});
 
@@ -101,29 +100,6 @@ const stylesheet = {
 };
 
 
-const element = (
-    <html>
-    <body>
-    <style>
-        {`
-        .heading4 {
-          background: darkgreen;
-          color: white;
-        }
-        pre {
-          background-color: #eee;
-          padding: 10px;
-        }`}
-    </style>
-    <h1>Heading 1</h1>
-    <h2 style={{ backgroundColor: 'pink', width: 300 }}>Heading 2</h2>
-    </body>
-    </html>
-);
-
-// @ts-ignore
-const htmlREact = ReactDOMServer.renderToStaticMarkup(element);
-
 const PdfDocument = () => {
     return (
         <Document>
@@ -157,15 +133,12 @@ const PdfDocument = () => {
                                     fontSize: 14
                                 }}
                             >
-                                {`<ul>
+                                {`<ul >
                                     <li>Fast and lightweight</li>
                                     <li>Semantic markup</li>
                                     <li>Standardized HTML between browsers</li>
                                     <li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
                                 </ul>`}
-                            </Html>
-                            <Html>
-                                {htmlREact}
                             </Html>
                         </Text>
                     </View>
