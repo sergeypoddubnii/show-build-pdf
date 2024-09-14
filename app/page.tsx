@@ -9,7 +9,11 @@ import ResumeForm from "@/app/components/ResumeForm";
 export default function Home() {
     const [urlFile, setUrlFile] = useState('');
     const [valueEditor, setValueEditor] = useState('');
-
+    console.log('valueEditor', valueEditor);
+    const handleChange = (val:string) => {
+        console.log('val', val);
+        setValueEditor(val)
+    }
     return (
         <main>
             <ResumeForm/>
@@ -26,7 +30,7 @@ export default function Home() {
             </PDFDownloadLink>
             <TextEditor
                 value={valueEditor}
-                handleChange={setValueEditor}
+                handleChange={handleChange}
             />
             {urlFile ? <MyPdfViewer url={urlFile} /> : null}
         </main>

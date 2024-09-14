@@ -133,12 +133,7 @@ const PdfDocument = () => {
                                     fontSize: 14
                                 }}
                             >
-                                {`<ul >
-                                    <li>Fast and lightweight</li>
-                                    <li>Semantic markup</li>
-                                    <li>Standardized HTML between browsers</li>
-                                    <li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
-                                </ul>`}
+                                {`<p>123123123 </p><p>123123123123</p><p><br/></p>`}
                             </Html>
                         </Text>
                     </View>
