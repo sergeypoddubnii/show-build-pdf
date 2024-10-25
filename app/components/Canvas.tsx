@@ -14,6 +14,7 @@ const CanvasPdfViewer = ({url}:any) => {
         canvasRef,
     });
 
+
     return (
         <div>
             {!pdfDocument && <span>Loading...</span>}
