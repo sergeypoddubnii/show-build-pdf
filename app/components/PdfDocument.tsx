@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
+import {Document, Image, Page, StyleSheet, Text, View, Font, Note} from "@react-pdf/renderer";
 import Html from 'react-pdf-html';
 import Roboto from '../../public/fonts/Roboto-Regular.ttf';
 
@@ -127,12 +127,7 @@ const PdfDocument = () => {
                             Profile
                         </Text>
                         <Text style={styles.profileDescription}>
-                            <Html
-                                stylesheet={stylesheet}
-                                style={{
-                                    fontSize: 14
-                                }}
-                            >
+                            <Html>
                                 {`<p>123123123 </p><p>123123123123</p><p><br/></p>`}
                             </Html>
                         </Text>
