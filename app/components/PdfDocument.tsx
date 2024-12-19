@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View, Font, Note} from "@react-pdf/renderer";
-import Html from 'react-pdf-html';
 import Roboto from '../../public/fonts/Roboto-Regular.ttf';
+import Html from "react-pdf-html";
 
 Font.register({ family: 'Roboto', src: Roboto});
 
@@ -28,6 +28,8 @@ const styles = StyleSheet.create({
     },
     fullName: {
         fontSize: 22,
+        fontFamily: 'Roboto',
+        fontWeight: 'bold',
     },
     position: {
         fontSize: 12
@@ -47,7 +49,6 @@ const styles = StyleSheet.create({
     },
     profileDescription: {
         fontSize: 14,
-        backgroundColor: 'red',
         display: "flex",
         justifyContent: "flex-start"
     },
@@ -83,24 +84,28 @@ const styles = StyleSheet.create({
 });
 
 const stylesheet = {
-    // clear margins for all <p> tags
     p: {
-        margin: 20,
+        margin: 10,
     },
     ul: {
         color: 'white',
         background: 'darkgreen'
     },
     // add pink color to elements with class="special"
-    ['.special']: {
-        color: 'pink',
-        display: 'flex'
-    }
+    strong: {
 
+        fontWeight: 'bold',
+    },
 };
 
 
-const PdfDocument = () => {
+
+interface IProps {
+    valueEditor: string;
+}
+
+const PdfDocument = ({valueEditor}:IProps) => {
+
     return (
         <Document>
             <Page
@@ -126,11 +131,13 @@ const PdfDocument = () => {
                         <Text style={styles.subTitle}>
                             Profile
                         </Text>
-                        <Text style={styles.profileDescription}>
-                            <Html>
-                                {`<p>123123123 </p><p>123123123123</p><p><br/></p>`}
-                            </Html>
-                        </Text>
+                        nigga
+                        <Html stylesheet={stylesheet}>
+                            {`<p>
+                                <strong>hello</strong>
+                                <strong>hello</strong>
+                            </p>`}
+                        </Html>
                     </View>
                     <View style={styles.employment}>
                         <Text style={styles.subTitle}>

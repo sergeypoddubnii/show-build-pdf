@@ -10,15 +10,16 @@ export default function Home() {
     const [urlFile, setUrlFile] = useState('');
     const [valueEditor, setValueEditor] = useState('');
     console.log('valueEditor', valueEditor);
+
     const handleChange = (val:string) => {
-        console.log('val', val);
         setValueEditor(val)
     }
+
     return (
         <main>
             <ResumeForm/>
             <PDFDownloadLink
-                document={<PdfDocument />}
+                document={<PdfDocument  valueEditor={valueEditor}/>}
                 fileName="hashfilename.pdf"
             >
                 {({ url, loading, error }) => {
