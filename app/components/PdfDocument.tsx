@@ -1,10 +1,14 @@
 'use client';
 import React from 'react';
-import {Document, Image, Page, StyleSheet, Text, View, Font, Note} from "@react-pdf/renderer";
-import Roboto from '../../public/fonts/Roboto-Regular.ttf';
+import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
+import RobotoRegular from '../../public/fonts/Roboto-Regular.ttf';
+import RobotoBold from '../../public/fonts/Roboto-Bold.ttf';
 import Html from "react-pdf-html";
 
-Font.register({ family: 'Roboto', src: Roboto});
+Font.register({ family: 'Roboto', fonts:[
+        {src: RobotoRegular},
+        {src: RobotoBold, fontWeight: 700},
+    ]});
 
 const styles = StyleSheet.create({
     page: {
@@ -79,21 +83,15 @@ const styles = StyleSheet.create({
     educationDate: {
         fontSize: 12,
     }
-
-
 });
 
 const stylesheet = {
-    p: {
-        margin: 10,
-    },
-    ul: {
+    ol: {
         color: 'white',
         background: 'darkgreen'
     },
     // add pink color to elements with class="special"
     strong: {
-
         fontWeight: 'bold',
     },
 };
@@ -132,12 +130,11 @@ const PdfDocument = ({valueEditor}:IProps) => {
                             Profile
                         </Text>
                         nigga
-                        <Html stylesheet={stylesheet}>
-                            {`<p>
-                                <strong>hello</strong>
-                                <strong>hello</strong>
-                            </p>`}
-                        </Html>
+                        {valueEditor ? (
+                            <Html stylesheet={stylesheet}>
+                                {valueEditor}
+                            </Html>
+                        ) : null}
                     </View>
                     <View style={styles.employment}>
                         <Text style={styles.subTitle}>
