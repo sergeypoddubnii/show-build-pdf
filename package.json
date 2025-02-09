@@ -15,8 +15,6 @@
     "@react-pdf/font": "^2.3.7",
     "@react-pdf/renderer": "^3.1.14",
     "antd": "^5.20.2",
-    "html2canvas": "^1.4.1",
-    "jspdf": "^2.5.2",
     "next": "^14.2.5",
     "next-fonts": "^1.5.1",
     "pdfjs-dist": "^2.16.105",

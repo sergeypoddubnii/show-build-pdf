@@ -87,7 +87,8 @@ const styles = StyleSheet.create({
 
 const stylesheet = {
     ol: {
-        color: 'red',
+        color: 'white',
+        background: 'darkgreen'
     },
     // add pink color to elements with class="special"
     strong: {
@@ -95,12 +96,13 @@ const stylesheet = {
     },
 };
 
+
+
 interface IProps {
     valueEditor: string;
 }
 
 const PdfDocument = ({valueEditor}:IProps) => {
-    console.log('valueEditor', valueEditor);
 
     return (
         <Document>
@@ -127,16 +129,10 @@ const PdfDocument = ({valueEditor}:IProps) => {
                         <Text style={styles.subTitle}>
                             Profile
                         </Text>
+                        nigga
                         {valueEditor ? (
                             <Html stylesheet={stylesheet}>
-                                {`<div>
-                                    <h1>Ordered List Example</h1>
-                                    <ol>
-                                        <li>First item</li>
-                                        <li>Second item</li>
-                                        <li>Third item</li>
-                                    </ol>
-                                </div>`}
+                                {valueEditor}
                             </Html>
                         ) : null}
                     </View>
