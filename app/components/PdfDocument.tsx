@@ -97,6 +97,12 @@ const stylesheet = {
     },
     em: {
         fontStyle: 'italic',
+    },
+    p: {
+        color: 'red',
+        margin: 0,
+        padding: 0,
+        fontSize: 14,
     }
 };
 
@@ -108,6 +114,15 @@ interface IProps {
 
 const PdfDocument = ({valueEditor}:IProps) => {
     console.log('valueEditor', valueEditor);
+    const match = valueEditor.match(/<ol>(.*?)<\/ol>/s)
+    const extracted = match ? match[1] : ''
+    const matches = extracted.match(/<li>(.*?)<\/li>/g)?.map(li => li.replace(/<\/?li>/g, ''));
+    const newstr= matches?.map((item, index) => (
+        `<p>${index + 1}. ${item}</p>
+        `
+    )).join('\n');
+    const middlewareValue = valueEditor.replace(/<ol>.*?<\/ol>/s, String(newstr));
+
     return (
         <Document>
             <Page
@@ -136,7 +151,7 @@ const PdfDocument = ({valueEditor}:IProps) => {
                         nigga
                         {valueEditor ? (
                             <Html stylesheet={stylesheet}>
-                                {valueEditor}
+                                {middlewareValue}
                             </Html>
                         ) : null}
                     </View>
