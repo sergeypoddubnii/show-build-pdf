@@ -93,7 +93,11 @@ const stylesheet = {
     // add pink color to elements with class="special"
     strong: {
         fontWeight: 'bold',
+        color: 'red'
     },
+    em: {
+        fontStyle: 'italic',
+    }
 };
 
 
@@ -103,7 +107,7 @@ interface IProps {
 }
 
 const PdfDocument = ({valueEditor}:IProps) => {
-
+    console.log('valueEditor', valueEditor);
     return (
         <Document>
             <Page
