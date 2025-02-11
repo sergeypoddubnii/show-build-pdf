@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, {memo} from 'react';
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 
@@ -18,4 +18,4 @@ const TextEditor = ({value, handleChange}:IProps) => {
     );
 };
 
-export default TextEditor;
+export default memo(TextEditor);

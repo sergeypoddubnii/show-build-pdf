@@ -3,17 +3,19 @@ import React, { useState, useRef } from 'react';
 // @ts-ignore
 import { usePdf } from '@mikecousins/react-pdf';
 
+interface IProps {
+    url:string;
+}
 
-const CanvasPdfViewer = ({url}:any) => {
+const PdfViewer = ({url}:IProps) => {
     const [page, setPage] = useState(1);
     const canvasRef = useRef(null);
 
-    const { pdfDocument, pdfPage } = usePdf({
+    const { pdfDocument } = usePdf({
         file: url,
         page,
         canvasRef,
     });
-
 
     return (
         <div>
@@ -45,4 +47,4 @@ const CanvasPdfViewer = ({url}:any) => {
     );
 };
 
-export default CanvasPdfViewer;
+export default PdfViewer;

@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
-import RobotoRegular from '../../public/fonts/Roboto-Regular.ttf';
-import RobotoBold from '../../public/fonts/Roboto-Bold.ttf';
+import RobotoRegular from '../../../public/fonts/Roboto-Regular.ttf';
+import RobotoBold from '../../../public/fonts/Roboto-Bold.ttf';
 import Html from "react-pdf-html";
 
 Font.register({ family: 'Roboto', fonts:[
@@ -106,14 +106,12 @@ const stylesheet = {
     }
 };
 
-
-
 interface IProps {
     valueEditor: string;
 }
 
 const PdfDocument = ({valueEditor}:IProps) => {
-    console.log('valueEditor', valueEditor);
+
     const match = valueEditor.match(/<ol>(.*?)<\/ol>/s)
     const extracted = match ? match[1] : ''
     const matches = extracted.match(/<li>(.*?)<\/li>/g)?.map(li => li.replace(/<\/?li>/g, ''));
