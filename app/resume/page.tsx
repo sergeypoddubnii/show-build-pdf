@@ -16,11 +16,11 @@ export default function ResumePage() {
     return (
         <main>
             <PDFDownloadLink
-                document={<PdfDocument  valueEditor={valueEditor}/>}
+                document={<PdfDocument valueEditor={valueEditor}/>}
                 fileName="hashfilename.pdf"
             >
-                {({ url, loading, error }) => {
-                    if(!url) return;
+                {({url, loading, error}) => {
+                    if (!url) return;
 
                     setUrlFile(url);
                     return (loading ? 'Loading' : 'Download now')
@@ -30,7 +30,7 @@ export default function ResumePage() {
                 value={valueEditor}
                 handleChange={handleChange}
             />
-            {urlFile ? <PdfViewer url={urlFile} /> : null}
+            {urlFile ? <PdfViewer url={urlFile}/> : null}
         </main>
     )
 }
