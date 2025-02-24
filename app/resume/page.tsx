@@ -9,9 +9,7 @@ export default function ResumePage() {
     const [urlFile, setUrlFile] = useState('');
     const [valueEditor, setValueEditor] = useState('');
 
-    const handleChange = (val:string) => {
-        setValueEditor(val)
-    };
+    const handleChange = (val:string) => setValueEditor(val);
 
     return (
         <main>
@@ -19,7 +17,7 @@ export default function ResumePage() {
                 document={<PdfDocument valueEditor={valueEditor}/>}
                 fileName="hashfilename.pdf"
             >
-                {({url, loading, error}) => {
+                {({url, loading}) => {
                     if (!url) return;
 
                     setUrlFile(url);
