@@ -90,7 +90,6 @@ const stylesheet = {
         color: 'white',
         background: 'darkgreen'
     },
-    // add pink color to elements with class="special"
     strong: {
         fontWeight: 'bold',
         color: 'red'
