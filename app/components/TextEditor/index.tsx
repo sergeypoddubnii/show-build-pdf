@@ -1,7 +1,9 @@
 'use client';
+
 import React, {memo} from 'react';
-import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
+import dynamic from 'next/dynamic';
+const ReactQuill = dynamic(() => import("react-quill"));
 
 interface IProps {
     value: string;
@@ -18,4 +20,4 @@ const TextEditor = ({value, handleChange}:IProps) => {
     );
 };
 
-export default memo(TextEditor);
+export default TextEditor;

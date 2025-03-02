@@ -1,20 +1,15 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx}", // App Router (Next.js 14)
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+    extend: {},
   },
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui")],  // DaisyUI Plugin
+  daisyui: {
+    themes: ["light", "dark"],  // Specify themes you want to use
+    logs: true,  // Enable logs
+  },
 };
-export default config;

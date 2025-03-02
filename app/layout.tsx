@@ -16,8 +16,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en"  data-theme="light">
+    <body
+        className={inter.className}
+    >
+    <div className="bg-blue-500 text-white p-4">
+      This is a blue box!
+    </div>
+    {children}
+    </body>
     </html>
   )
 }

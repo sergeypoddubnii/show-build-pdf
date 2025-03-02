@@ -33,7 +33,7 @@ const PdfViewer = ({url}:IProps) => {
                         </li>
                         <li className="next">
                             <button
-                                disabled={page === pdfDocument.numPages}
+                                disabled={page === pdfDocument?.numPages}
                                 onClick={handleNextPage}
                             >
                                 Next

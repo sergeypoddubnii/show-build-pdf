@@ -145,7 +145,6 @@ const PdfDocument = ({valueEditor}:IProps) => {
                         <Text style={styles.subTitle}>
                             Profile
                         </Text>
-                        nigga
                         {valueEditor ? (
                             <Html stylesheet={stylesheet}>
                                 {middlewareValue}
