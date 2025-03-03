@@ -15,7 +15,6 @@ export default function ResumePage() {
 
     const generatePdf = async () => {
         const doc = <PdfDocument valueEditor={"Your content"} />;
-        console.log('doc', doc);
         const blob = await pdf(doc)?.toBlob(); // Generate PDF as a Blob
         const url = URL.createObjectURL(blob);
         setUrlFile(url);

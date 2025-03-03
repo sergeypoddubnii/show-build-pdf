@@ -23,6 +23,9 @@ export default function RootLayout({
     <div className="bg-blue-500 text-white p-4">
       This is a blue box!
     </div>
+    <div className="bg-blue-500 text-white p-4 text-xl">
+      Tailwind CSS is working! 🚀
+    </div>
     {children}
     </body>
     </html>

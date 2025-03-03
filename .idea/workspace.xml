@@ -4,23 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff73c07-1f08-4797-8b25-1d7f54cdd024" name="Changes" comment="add daisyui">
-      <change afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/show-build-pdf.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/PdfDocument/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/PdfDocument/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/PdfViewer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/PdfViewer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/TextEditor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/TextEditor/index.tsx" afterDir="false" />
+    <list default="true" id="6ff73c07-1f08-4797-8b25-1d7f54cdd024" name="Changes" comment="fix loading pdf file &#10;fix daisyui problems">
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resume/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resume/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.mjs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,6 +196,11 @@
       <workItem from="1740937117742" duration="3781000" />
       <workItem from="1740940943571" duration="2295000" />
       <workItem from="1740943391159" duration="55000" />
+      <workItem from="1740943938547" duration="77000" />
+      <workItem from="1741026155996" duration="1634000" />
+      <workItem from="1741027945808" duration="127000" />
+      <workItem from="1741028126000" duration="7000" />
+      <workItem from="1741028514841" duration="1518000" />
     </task>
     <task id="LOCAL-00001" summary="start ffrom new repositiry">
       <created>1702227417583</created>
@@ -518,22 +517,6 @@
       <option name="project" value="LOCAL" />
       <updated>1713541372400</updated>
     </task>
-    <task id="LOCAL-00066" summary="update upload files">
-      <option name="closed" value="true" />
-      <created>1740423683704</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1740423683704</updated>
-    </task>
-    <task id="LOCAL-00067" summary="update upload files">
-      <option name="closed" value="true" />
-      <created>1740688335077</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1740688335077</updated>
-    </task>
     <task id="LOCAL-00068" summary="refactor pdf viewer">
       <option name="closed" value="true" />
       <created>1740772341238</created>
@@ -550,7 +533,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740863305654</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="fix loading pdf file &#10;fix daisyui problems">
+      <option name="closed" value="true" />
+      <created>1740943968843</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1740943968843</updated>
+    </task>
+    <task id="LOCAL-00071" summary="fix loading pdf file &#10;fix daisyui problems">
+      <option name="closed" value="true" />
+      <created>1740943973591</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1740943973591</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor description" />
     <MESSAGE value="change loading file" />
     <MESSAGE value="add loader" />
     <MESSAGE value="check download file" />
@@ -598,6 +596,7 @@
     <MESSAGE value="update upload files" />
     <MESSAGE value="refactor pdf viewer" />
     <MESSAGE value="add daisyui" />
-    <option name="LAST_COMMIT_MESSAGE" value="add daisyui" />
+    <MESSAGE value="fix loading pdf file &#10;fix daisyui problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix loading pdf file &#10;fix daisyui problems" />
   </component>
 </project>
