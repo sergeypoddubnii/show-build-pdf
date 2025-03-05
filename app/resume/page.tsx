@@ -1,36 +1,32 @@
 'use client';
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import PdfDocument from "@/app/components/PdfDocument/index";
-import PdfViewer from "@/app/components/PdfViewer/index";
+// import PdfViewer from "@/app/components/PdfViewer/index";
 import dynamic from "next/dynamic";
-import { pdf } from "@react-pdf/renderer";
+
+// Disable SSR for PDFDownloadLink
 const PDFDownloadLink = dynamic(
     () => import("@react-pdf/renderer").then((mod) => mod.PDFDownloadLink),
-    { ssr: false }
+    {
+        ssr: false, // Disable SSR for this component
+        loading: () => <p>Loading...</p>, // Optional loading component
+    }
 );
 
 export default function ResumePage() {
     const [urlFile, setUrlFile] = useState('');
     const [valueEditor, setValueEditor] = useState('');
 
-    const generatePdf = async () => {
-        const doc = <PdfDocument valueEditor={"Your content"} />;
-        const blob = await pdf(doc)?.toBlob(); // Generate PDF as a Blob
-        const url = URL.createObjectURL(blob);
-        setUrlFile(url);
-    };
-    useEffect(() => {
-        generatePdf()
-    }, []);
-
     const handleChange = (val:string) => setValueEditor(val);
     return (
         <main>
+            hello
             <PDFDownloadLink
                 document={<PdfDocument valueEditor={valueEditor}/>}
                 fileName="hashfilename.pdf"
             >
                 {({url, loading}) => {
+                    console.log('url', url)
                     return (loading ? 'Loading' : 'Download now')
                 }}
             </PDFDownloadLink>
@@ -38,7 +34,7 @@ export default function ResumePage() {
             {/*    value={valueEditor}*/}
             {/*    handleChange={handleChange}*/}
             {/*/>*/}
-            {urlFile ? <PdfViewer url={urlFile}/> : null}
+            {/*{urlFile ? <PdfViewer url={urlFile}/> : null}*/}
         </main>
     )
 }

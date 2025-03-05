@@ -1,14 +1,14 @@
 'use client';
 import React from 'react';
 import {Document, Image, Page, StyleSheet, Text, View, Font} from "@react-pdf/renderer";
-import RobotoRegular from '../../../public/fonts/Roboto-Regular.ttf';
-import RobotoBold from '../../../public/fonts/Roboto-Bold.ttf';
+// import RobotoRegular from '../../../public/fonts/Roboto-Regular.ttf';
+// import RobotoBold from '../../../public/fonts/Roboto-Bold.ttf';
 import Html from "react-pdf-html";
 
-Font.register({ family: 'Roboto', fonts:[
-        {src: RobotoRegular},
-        {src: RobotoBold, fontWeight: 700},
-    ]});
+// Font.register({ family: 'Roboto', fonts:[
+//         {src: RobotoRegular},
+//         {src: RobotoBold, fontWeight: 700},
+//     ]});
 
 const styles = StyleSheet.create({
     page: {
